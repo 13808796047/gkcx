@@ -10,6 +10,12 @@ class SchoolInfoController extends Controller
 {
     public function index(Request $request)
     {
-        return SchoolInfoResource::collection(SchoolInfo::paginate());
+        $data = SchoolInfo::search($request);
+        return SchoolInfoResource::collection($data->paginate());
+    }
+
+    public function show(SchoolInfo $school)
+    {
+        return new SchoolInfoResource($school->loadMissing('schoolNews', 'schoolMajors', 'scorelineMajors', 'schoolContent'));
     }
 }

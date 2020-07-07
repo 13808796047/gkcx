@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('school', 'SchoolInfoController@index');
-
+Route::resource('school', 'SchoolInfoController', ['only' => ['index', 'show']]);
+Route::resource('scoreline_major', 'ScorelineMajorController', ['only' => ['index']]);
+Route::resource('school_news', 'SchoolNewsController', ['only' => ['index']]);
+Route::resource('school_major', 'SchoolMajorController', ['only' => ['index']]);
+Route::resource('school_content', 'SchoolContentController', ['only' => ['index']]);
+Route::resource('school_ask', 'SchoolAskController', ['only' => ['index']]);
