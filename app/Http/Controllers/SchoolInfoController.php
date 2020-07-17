@@ -16,6 +16,6 @@ class SchoolInfoController extends Controller
 
     public function show(SchoolInfo $school)
     {
-        return new SchoolInfoResource($school->loadMissing('schoolNews', 'schoolMajors', 'scorelineMajors', 'schoolContent'));
+        return new SchoolInfoResource($school->loadMissing('schoolNews', 'schoolMajors', 'scorelineMajors', 'schoolContent', 'schoolComments', 'scorelineProvs'));
     }
 }

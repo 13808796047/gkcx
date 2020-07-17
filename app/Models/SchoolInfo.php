@@ -34,4 +34,14 @@ class SchoolInfo extends Model
     {
         return $this->hasMany(SchoolAsk::class, 'sid', 'sid');
     }
+
+    public function schoolComments()
+    {
+        return $this->hasMany(SchoolComment::class, 'sid', 'sid');
+    }
+
+    public function scorelineProvs()
+    {
+        return $this->hasMany(ScorelineProv::class, 'sid', 'sid')->where('year', '2019');
+    }
 }

@@ -20,6 +20,8 @@ class SchoolInfoResource extends JsonResource
         $data['school_majors'] = SchoolMajorResource::collection($this->whenLoaded('schoolMajors'));
         $data['scoreline_majors'] = ScorelineMajorResource::collection($this->whenLoaded('scorelineMajors'));
         $data['school_content'] = new SchoolContentResource($this->whenLoaded('schoolContent'));
+        $data['school_comments'] = new SchoolCommentResource($this->whenLoaded('schoolComments'));
+        $data['scoreline_provs'] = ScorelineProvResource::collection($this->whenLoaded('scorelineProvs'));
         return $data;
     }
 }
