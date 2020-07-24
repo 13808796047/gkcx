@@ -12,6 +12,6 @@ class ScorelineMajorController extends Controller
     public function index(Request $request)
     {
         $builder = ScorelineMajor::where('sid', $request->sid)->search($request);
-        return scorelineMajorResource::collection($builder->paginate(10));
+        return ScorelineMajorResource::collection($builder->paginate(10));
     }
 }
