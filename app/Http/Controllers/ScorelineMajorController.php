@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\scorelineMajorResource;
+use App\Http\Resources\ScorelineMajorResource;
 use App\Models\SchoolInfo;
 use App\Models\ScorelineMajor;
 use Illuminate\Http\Request;
